@@ -487,26 +487,47 @@
         }
 
 
-        function addPhotoToScene(texture) {
-            const frameGeo = new THREE.BoxGeometry(1.4, 1.4, 0.05);
-            const frameMat = new THREE.MeshStandardMaterial({ color: CONFIG.colors.champagneGold, metalness: 1.0, roughness: 0.1 });
-            const frame = new THREE.Mesh(frameGeo, frameMat);
+    function addPhotoToScene(texture) {
+        const img = texture.image;
 
-            const photoGeo = new THREE.PlaneGeometry(1.2, 1.2);
-            const photoMat = new THREE.MeshBasicMaterial({ map: texture });
-            const photo = new THREE.Mesh(photoGeo, photoMat);
-            photo.position.z = 0.04;
+        const aspect = img.width / img.height;
+        const baseSize = 1.2;
 
-            const group = new THREE.Group();
-            group.add(frame);
-            group.add(photo);
-
-            const s = 0.8;
-            group.scale.set(s,s,s);
-
-            photoMeshGroup.add(group);
-            particleSystem.push(new Particle(group, 'PHOTO', false));
+        let width, height;
+        if (aspect >= 1) {
+            // landscape
+            width = baseSize;
+            height = baseSize / aspect;
+        } else {
+            // portrait
+            width = baseSize * aspect;
+            height = baseSize;
         }
+
+        const frameGeo = new THREE.BoxGeometry(width + 0.2, height + 0.2, 0.05);
+        const frameMat = new THREE.MeshStandardMaterial({
+            color: CONFIG.colors.champagneGold,
+            metalness: 1.0,
+            roughness: 0.1
+        });
+        const frame = new THREE.Mesh(frameGeo, frameMat);
+
+        const photoGeo = new THREE.PlaneGeometry(width, height);
+        const photoMat = new THREE.MeshBasicMaterial({ map: texture });
+        const photo = new THREE.Mesh(photoGeo, photoMat);
+        photo.position.z = 0.04;
+
+        const group = new THREE.Group();
+        group.add(frame);
+        group.add(photo);
+
+        const s = 0.8;
+        group.scale.set(s, s, s);
+
+        photoMeshGroup.add(group);
+        particleSystem.push(new Particle(group, 'PHOTO', false));
+    }
+
 
         function handleImageUpload(e) {
             const files = e.target.files;
