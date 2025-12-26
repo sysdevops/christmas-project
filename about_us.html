@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title data-en="About Us" data-vi="Về Chúng Mình">About Us</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
@@ -41,15 +42,9 @@
           },
         }
     </script>
-<style>
-        .folded-card {
-            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
-        }
-        @media (min-width: 768px) {
-            .folded-card {
-                clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%);
-            }
-        }
+    <style>
+        .folded-card { clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%); }
+        @media (min-width: 768px) { .folded-card { clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%); } }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden antialiased">
@@ -60,17 +55,33 @@
             <div class="size-8 text-primary">
                 <span class="material-symbols-outlined text-3xl">auto_stories</span>
             </div>
-            <h2 class="text-lg font-bold leading-tight tracking-tight">Our story</h2>
+            <h2 class="text-lg font-bold leading-tight" data-en="Our story" data-vi="Chuyện chúng mình">Our story</h2>
         </div>
 
-        <nav class="order-3 w-full md:order-2 md:w-auto flex items-center justify-center gap-6 mt-3 md:mt-0 md:pt-0 pt-3 border-t md:border-none border-gray-100 dark:border-gray-800">
-            <a class="text-xs md:text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="index.html">Home</a>
-            <a class="text-xs md:text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="#">Stories</a>
-            <a class="text-xs md:text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="#">Images</a>
+        <nav class="order-3 w-full md:order-2 md:w-auto flex items-center justify-center gap-6 mt-3 md:mt-0 pt-3 border-t md:border-none border-gray-100">
+            <a class="text-xs md:text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="index.html" data-en="Home" data-vi="Trang chủ">Home</a>
+            <a class="text-xs md:text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="#" data-en="Stories" data-vi="Chuyện kể">Stories</a>
+            <a class="text-xs md:text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors" href="#" data-en="Images" data-vi="Hình ảnh">Images</a>
         </nav>
 
-        <div class="order-2 md:order-3 flex items-center gap-3">
-             <span class="text-primary text-xl">❤️</span>
+        <div class="order-2 md:order-3 flex items-center gap-2">
+            <a class="p-2 hover:text-primary transition-all" href="#">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a class="p-2 hover:text-primary transition-all" href="#">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+
+            <div class="relative group ml-1">
+                <button class="flex items-center gap-1 bg-white dark:bg-white/10 px-2 py-1.5 rounded-lg border border-gray-200 transition-all">
+                    <span id="lang-icon" class="text-lg">🇺🇸</span>
+                    <span id="lang-label" class="text-[10px] font-black">ENG</span>
+                </button>
+                <div class="absolute right-0 mt-2 w-28 bg-white dark:bg-card-dark border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
+                    <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-xs font-bold hover:bg-primary/10 flex items-center gap-2">🇺🇸 English</button>
+                    <button onclick="changeLanguage('vi')" class="w-full text-left px-4 py-2 text-xs font-bold hover:bg-primary/10 flex items-center gap-2">🇻🇳 Tiếng Việt</button>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -78,10 +89,10 @@
 <main class="flex flex-col items-center w-full pb-20">
     <section class="w-full px-4 pt-12 pb-8 md:py-24 flex justify-center text-center">
         <div class="max-w-[960px] w-full flex flex-col gap-4 items-center">
-            <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-text-main dark:text-white">
+            <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight" data-en="And here we are" data-vi="Và đây là chúng mình">
                 And here we are
             </h1>
-            <p class="text-base md:text-xl text-text-sub dark:text-gray-400 max-w-2xl font-light">
+            <p class="text-base md:text-xl text-text-sub dark:text-gray-400 max-w-2xl font-light" data-en='"A little bit of us."' data-vi='"Một chút về tụi mình."'>
                 "A little bit of us."
             </p>
             <div class="h-1.5 w-16 bg-primary rounded-full mt-2"></div>
@@ -105,25 +116,25 @@
                         <div class="h-1 w-12 bg-love/30 mt-2"></div>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        <div class="flex flex-col p-3 rounded-xl bg-white/60 dark:bg-background-dark/50 border border-love/10">
+                        <div class="flex flex-col p-3 rounded-xl bg-white/60 dark:bg-background-dark/50 border border-love/10 text-center sm:text-left">
                             <span class="material-symbols-outlined text-love text-xl mb-1">auto_awesome</span>
                             <h3 class="font-bold text-xs">8/12</h3>
-                            <p class="text-[10px] text-text-sub uppercase">Sagittarius</p>
+                            <p class="text-[10px] text-text-sub uppercase" data-en="Sagittarius" data-vi="Nhân Mã">Sagittarius</p>
                         </div>
-                        <div class="flex flex-col p-3 rounded-xl bg-white/60 dark:bg-background-dark/50 border border-love/10">
+                        <div class="flex flex-col p-3 rounded-xl bg-white/60 dark:bg-background-dark/50 border border-love/10 text-center sm:text-left">
                             <span class="material-symbols-outlined text-love text-xl mb-1">local_cafe</span>
-                            <h3 class="font-bold text-xs">Latte</h3>
-                            <p class="text-[10px] text-text-sub uppercase">Favorite</p>
+                            <h3 class="font-bold text-xs" data-en="Latte" data-vi="Latte">Latte</h3>
+                            <p class="text-[10px] text-text-sub uppercase" data-en="Favorite" data-vi="Yêu thích">Favorite</p>
                         </div>
-                        <div class="flex flex-col p-3 rounded-xl bg-white/60 dark:bg-background-dark/50 border border-love/10 col-span-2 sm:col-span-1">
+                        <div class="flex flex-col p-3 rounded-xl bg-white/60 dark:bg-background-dark/50 border border-love/10 col-span-2 sm:col-span-1 text-center sm:text-left">
                             <span class="material-symbols-outlined text-love text-xl mb-1">edit_note</span>
-                            <h3 class="font-bold text-xs">HR Girlie</h3>
-                            <p class="text-[10px] text-text-sub uppercase">Profession</p>
+                            <h3 class="font-bold text-xs" data-en="HR Girlie" data-vi="Cô nàng HR">HR Girlie</h3>
+                            <p class="text-[10px] text-text-sub uppercase" data-en="Profession" data-vi="Nghề nghiệp">Profession</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
                         <button class="size-12 bg-love text-white rounded-full shadow-lg shadow-love/30 hover:scale-105 transition-transform">🐷</button>
-                        <p class="text-sm font-bold text-love/80 italic">The cute one</p>
+                        <p class="text-sm font-bold text-love/80 italic" data-en="The cute one" data-vi="Người đáng yêu">The cute one</p>
                     </div>
                 </div>
             </div>
@@ -144,25 +155,25 @@
                         <div class="h-1 w-12 bg-primary/30 mt-2"></div>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                        <div class="flex flex-col p-3 rounded-xl bg-background-light dark:bg-background-dark/50 border border-primary/10">
+                        <div class="flex flex-col p-3 rounded-xl bg-background-light dark:bg-background-dark/50 border border-primary/10 text-center sm:text-left">
                             <span class="material-symbols-outlined text-primary text-xl mb-1">bolt</span>
                             <h3 class="font-bold text-xs">12/11</h3>
-                            <p class="text-[10px] text-text-sub uppercase">Scorpio</p>
+                            <p class="text-[10px] text-text-sub uppercase" data-en="Scorpio" data-vi="Bọ Cạp">Scorpio</p>
                         </div>
-                        <div class="flex flex-col p-3 rounded-xl bg-background-light dark:bg-background-dark/50 border border-primary/10">
+                        <div class="flex flex-col p-3 rounded-xl bg-background-light dark:bg-background-dark/50 border border-primary/10 text-center sm:text-left">
                             <span class="material-symbols-outlined text-primary text-xl mb-1">coffee</span>
-                            <h3 class="font-bold text-xs">Black</h3>
-                            <p class="text-[10px] text-text-sub uppercase">Fuel</p>
+                            <h3 class="font-bold text-xs" data-en="Black" data-vi="Cafe đen">Black</h3>
+                            <p class="text-[10px] text-text-sub uppercase" data-en="Fuel" data-vi="Năng lượng">Fuel</p>
                         </div>
-                        <div class="flex flex-col p-3 rounded-xl bg-background-light dark:bg-background-dark/50 border border-primary/10 col-span-2 sm:col-span-1">
+                        <div class="flex flex-col p-3 rounded-xl bg-background-light dark:bg-background-dark/50 border border-primary/10 col-span-2 sm:col-span-1 text-center sm:text-left">
                             <span class="material-symbols-outlined text-primary text-xl mb-1">architecture</span>
-                            <h3 class="font-bold text-xs">Engineer</h3>
-                            <p class="text-[10px] text-text-sub uppercase">Her protector</p>
+                            <h3 class="font-bold text-xs" data-en="Engineer" data-vi="Kỹ sư">Engineer</h3>
+                            <p class="text-[10px] text-text-sub uppercase" data-en="Her protector" data-vi="Người bảo vệ">Her protector</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
                         <button class="size-12 bg-primary text-white rounded-full shadow-lg shadow-primary/30 hover:scale-105 transition-transform">🐯</button>
-                        <p class="text-sm font-bold text-primary italic">The engineer</p>
+                        <p class="text-sm font-bold text-primary italic" data-en="The engineer" data-vi="Anh kỹ sư">The engineer</p>
                     </div>
                 </div>
             </div>
@@ -175,10 +186,12 @@
     <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">auto_stories</span>
-            <span class="font-bold text-text-main dark:text-white">Our Story</span>
+            <span class="font-bold text-text-main dark:text-white" data-en="Our Story" data-vi="Chuyện chúng mình">Our Story</span>
         </div>
-        <p class="text-sm text-text-sub">© 2025 All about us ❤️ Gia An & Nhut Linh</p>
+        <p class="text-sm text-text-sub" data-en="© 2025 All about us ❤️ Gia An & Nhut Linh" data-vi="© 2025 Mọi thứ về tụi mình ❤️ Gia An & Nhựt Linh">© 2025 All about us ❤️ Gia An & Nhut Linh</p>
     </div>
 </footer>
 
-</body></html>
+<script src="script.js"></script>
+</body>
+</html>

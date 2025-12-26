@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>❤️ For Andy</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>❤️ For Andy</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -16,33 +17,17 @@
                     colors: {
                         "primary": "#13c8ec",
                         "primary-dark": "#0ea5c3",
-                        "background-light": "rgba(249, 246, 240, 0.4)",
                         "background-dark": "#1a1614",
-                        "surface-light": "#ffffff",
                         "surface-dark": "#2c2420",
                     },
                     fontFamily: {
                         "display": ["Plus Jakarta Sans", "sans-serif"],
                         "body": ["Noto Sans", "sans-serif"],
                     },
-                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
                     keyframes: {
-                        moveAcross: {
-                            '0%': { transform: 'translateX(-100px)' },
-                            '100%': { transform: 'translateX(100vw)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        slideUpFade: {
-                            '0%': { opacity: 0, transform: 'translateY(50px)' },
-                            '100%': { opacity: 1, transform: 'translateY(0)' },
-                        },
-                        popIn: {
-                            '0%': { opacity: 0, transform: 'scale(0.9)' },
-                            '100%': { opacity: 1, transform: 'scale(1)' },
-                        }
+                        moveAcross: { '0%': { transform: 'translateX(-100px)' }, '100%': { transform: 'translateX(100vw)' } },
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+                        slideUpFade: { '0%': { opacity: 0, transform: 'translateY(50px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
                     },
                     animation: {
                         'move-slow': 'moveAcross 30s linear infinite',
@@ -50,206 +35,108 @@
                         'move-fast': 'moveAcross 15s linear infinite',
                         'float-gentle': 'float 6s ease-in-out infinite',
                         'slide-up': 'slideUpFade 0.8s ease-out forwards',
-                        'pop-in': 'popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
                     }
                 },
             },
         }
     </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                    entry.target.classList.remove('opacity-0');
-                }
-            });
-        }, observerOptions);
-
-        const quote = document.querySelector('#quote-section');
-        if (quote) observer.observe(quote);
-        const grid = document.querySelector('#image-grid-section');
-        if (grid) observer.observe(grid);
-    });
-</script>
-<style type="text/tailwindcss">
-/* ĐÃ CẬP NHẬT ĐƯỜNG DẪN BACKGROUND */
-.bg-sunshine-beach {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("images/our_here.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed
-    }
-.dark .bg-sunshine-beach {
-    background-image: linear-gradient(to bottom, rgba(26, 22, 20, 0.9), rgba(26, 22, 20, 0.95)), url("images/our_here.jpg")
-    }
-</style>
+    <style type="text/tailwindcss">
+        .bg-sunshine-beach {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("images/our_here.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed
+        }
+    </style>
 </head>
 <body class="bg-sunshine-beach text-[#111718] dark:text-[#f0f4f4] font-display overflow-x-hidden transition-colors duration-300 min-h-screen">
-<div aria-hidden="true" class="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
-<div class="absolute top-[15%] left-0 animate-move-slow opacity-60 text-4xl select-none">🐷</div>
-<div class="absolute top-[45%] left-0 animate-move-fast opacity-50 text-3xl select-none" style="animation-delay: 2s;">❤️</div>
-<div class="absolute top-[75%] left-0 animate-move-medium opacity-60 text-4xl select-none" style="animation-delay: 5s;">🐯</div>
-<div class="absolute top-[25%] left-0 animate-move-medium opacity-40 text-2xl select-none" style="animation-delay: 8s;">❤️</div>
-<div class="absolute top-[85%] left-0 animate-move-slow opacity-50 text-3xl select-none" style="animation-delay: 12s;">🐷</div>
-<div class="absolute top-[10%] left-0 animate-move-fast opacity-30 text-2xl select-none" style="animation-delay: 15s;">✨</div>
-</div>
-<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 dark:bg-background-dark/80 border-b border-gray-200/50 dark:border-gray-800/50 flex flex-col">
-    <div class="w-full bg-pink-300/40 text-center py-2 px-4 backdrop-blur-sm border-b border-pink-300/20">
-        <p class="text-[10px] md:text-sm font-medium text-pink-900 dark:text-pink-100">
-            ❤️ We are trying to build the story to make the website better, please wait ❤️
-        </p>
+
+    <div aria-hidden="true" class="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
+        <div class="absolute top-[15%] left-0 animate-move-slow opacity-60 text-4xl select-none">🐷</div>
+        <div class="absolute top-[45%] left-0 animate-move-fast opacity-50 text-3xl select-none">❤️</div>
+        <div class="absolute top-[75%] left-0 animate-move-medium opacity-60 text-4xl select-none">🐯</div>
     </div>
 
-    <div class="px-4 md:px-20 lg:px-40 py-4 w-full">
-        <div class="flex flex-wrap items-center justify-between max-w-[1200px] mx-auto gap-y-4">
+    <div class="relative flex flex-col min-h-screen w-full">
+        <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 dark:bg-background-dark/80 border-b border-gray-200/50 dark:border-gray-800/50 flex flex-col">
+            <div class="w-full bg-pink-300/40 text-center py-2 px-4 border-b border-pink-300/20">
+                <p class="text-[10px] md:text-sm font-medium text-pink-900 dark:text-pink-100"
+                   data-en="❤️ We are trying to build the story to make the website better, please wait ❤️"
+                   data-vi="❤️ Chúng mình đang hoàn thiện câu chuyện để website tốt hơn, đợi nhé ❤️">
+                    ❤️ We are trying to build the story to make the website better, please wait ❤️
+                </p>
+            </div>
 
-            <div class="flex items-center gap-2 md:gap-3 group cursor-pointer">
-                <div class="size-8 md:size-10 bg-primary/20 dark:bg-primary/10 rounded-full flex items-center justify-center text-primary transition-transform group-hover:rotate-12">
-                    <span class="material-symbols-outlined filled text-xl">auto_stories</span>
+            <div class="px-4 md:px-20 lg:px-40 py-4 w-full">
+                <div class="flex flex-wrap items-center justify-between max-w-[1200px] mx-auto gap-y-4">
+                    <div class="flex items-center gap-3 group cursor-pointer">
+                        <div class="size-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined filled">auto_stories</span>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight" data-en="Our Story" data-vi="Chuyện Chúng Mình">Our Story</h2>
+                    </div>
+
+                    <nav class="order-3 w-full md:order-2 md:w-auto flex items-center justify-center gap-6 md:gap-8 border-t md:border-none pt-3 md:pt-0">
+                        <a class="text-xs md:text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#" data-en="Story" data-vi="Câu Chuyện">Story</a>
+                        <a class="text-xs md:text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#" data-en="Image" data-vi="Hình Ảnh">Image</a>
+                        <a class="text-xs md:text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="about_us.html" data-en="About Us" data-vi="Về Chúng Mình">About Us</a>
+                    </nav>
+
+                    <div class="order-2 md:order-3 flex items-center gap-2">
+                        <a class="p-2 hover:text-primary transition-all hover:scale-110" href="#">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                        </a>
+                        <a class="p-2 hover:text-primary transition-all hover:scale-110" href="#">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+
+                        <div class="relative group ml-1">
+                            <button class="flex items-center gap-1 bg-white/50 dark:bg-white/10 px-2 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 transition-all hover:bg-primary/10">
+                                <span id="lang-icon" class="text-lg">🇺🇸</span>
+                                <span id="lang-label" class="text-[10px] font-black">ENG</span>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-28 bg-white dark:bg-surface-dark border border-gray-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
+                                <button onclick="changeLanguage('en')" class="w-full text-left px-4 py-2 text-xs font-bold hover:bg-primary/10 flex items-center gap-2">🇺🇸 English</button>
+                                <button onclick="changeLanguage('vi')" class="w-full text-left px-4 py-2 text-xs font-bold hover:bg-primary/10 flex items-center gap-2">🇻🇳 Tiếng Việt</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-lg md:text-xl font-bold tracking-tight text-[#111718] dark:text-white">Our Story</h2>
             </div>
+        </header>
 
-            <nav class="order-3 w-full md:order-2 md:w-auto flex items-center justify-center gap-6 md:gap-8 border-t md:border-none pt-3 md:pt-0 mt-1 md:mt-0">
-                <a class="text-xs md:text-sm font-bold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors uppercase tracking-wider" href="#">Story</a>
-                <a class="text-xs md:text-sm font-bold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors uppercase tracking-wider" href="#">Image</a>
-                <a class="text-xs md:text-sm font-bold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors uppercase tracking-wider" href="about_us.html">About Us</a>
-            </nav>
+        <main class="w-full">
+            <section class="px-6 md:px-20 py-12 md:py-20 max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
+                <div class="flex-1 text-left">
+                    <h1 class="text-5xl md:text-7xl font-black leading-tight text-[#111718] dark:text-white" data-en="Discover our journey right here" data-vi="Khám phá hành trình của chúng mình">Discover our journey right here</h1>
+                    <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 italic" data-en='"Hope our story brightens your day."' data-vi='"Hy vọng câu chuyện này sẽ làm ngày của bạn thêm tươi đẹp."'>"Hope our story brightens your day."</p>
+                    <button class="mt-8 h-12 px-8 rounded-full bg-primary font-bold text-white shadow-lg shadow-primary/30" data-en="Discovery now" data-vi="Khám phá ngay">Discovery now</button>
+                </div>
+                <div class="flex-1 w-full">
+                    <img src="images/our_here.jpg" class="rounded-3xl shadow-2xl animate-float-gentle border-8 border-white w-full aspect-[4/3] object-cover" alt="Hero">
+                </div>
+            </section>
 
-            <div class="order-2 md:order-3 flex items-center gap-2 md:gap-4">
-                <a aria-label="Instagram" class="text-[#111718] dark:text-white hover:text-primary hover:scale-110 transition-all p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" href="#">
-                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                        <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a aria-label="Facebook" class="text-[#111718] dark:text-white hover:text-primary hover:scale-110 transition-all p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" href="#">
-                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-            </div>
+            <section class="w-full py-24 bg-white/40 backdrop-blur-sm opacity-0 text-center" id="quote-section">
+                <h2 class="max-w-[800px] mx-auto text-3xl md:text-5xl font-black px-6" data-en='"Every encounter has its meaning, no matter the outcome."' data-vi='"Mọi cuộc gặp gỡ đều có ý nghĩa, bất kể kết quả ra sao."'>"Every encounter has its meaning, no matter the outcome."</h2>
+                <p class="text-2xl mt-4">🐯 ❤️ 🐷</p>
+            </section>
 
-        </div>
+            <section class="w-full px-4 md:px-20 py-24 opacity-0" id="image-grid-section">
+                <div class="max-w-[1200px] mx-auto flex flex-col gap-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 items-center justify-center gap-4 md:gap-8">
+                        <div class="aspect-[3/4] rounded-2xl bg-cover bg-center shadow-xl -rotate-6 md:-translate-y-12 border-4 border-white" style='background-image: url("images/together_1.jpg");'></div>
+                        <div class="aspect-square rounded-2xl bg-cover bg-center shadow-xl rotate-3 translate-y-4 md:translate-y-8 border-4 border-white" style='background-image: url("images/together_2.jpg");'></div>
+                        <div class="aspect-[3/4] rounded-2xl bg-cover bg-center shadow-xl -rotate-3 md:-translate-y-4 border-4 border-white" style='background-image: url("images/together_3.jpg");'></div>
+                        <div class="aspect-square rounded-2xl bg-cover bg-center shadow-xl rotate-12 translate-y-8 md:-translate-y-20 border-4 border-white" style='background-image: url("images/together_4.jpg");'></div>
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="h-12 px-10 rounded-full bg-primary text-white font-bold shadow-lg" data-en="See u soon..." data-vi="Hẹn gặp lại sớm...">See u soon...</button>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-</header>
-
-<main class="flex-grow flex flex-col items-center w-full">
-<section class="w-full px-6 md:px-20 lg:px-40 py-12 md:py-20 relative overflow-hidden">
-<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
-<div class="flex flex-col gap-6 flex-1 items-start text-left z-10">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 dark:bg-surface-dark border border-gray-200 dark:border-gray-700 shadow-sm backdrop-blur-sm">
-<span class="material-symbols-outlined text-primary text-sm">❤️</span>
-<span class="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">We are here</span>
-</div>
-<h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-[#111718] dark:text-white">
-                            Discover our<br/> journey <span class="text-primary relative inline-block">right here
-                                <svg class="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-40" preserveAspectRatio="none" viewBox="0 0 100 10"><path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="8"></path></svg>
-</span>
-</h1>
-<p class="text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed mix-blend-multiply dark:mix-blend-normal">
-                            "Hope our story brightens your day."
-                        </p>
-<div class="flex flex-wrap gap-4 mt-2">
-<button class="h-12 px-8 rounded-full bg-primary hover:bg-primary-dark text-[#111718] font-bold text-base shadow-xl shadow-primary/20 transition-all hover:-translate-y-1">
-                                Discovery now
-                            </button>
-<button class="h-12 px-8 rounded-full bg-white/80 dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-[#111718] dark:text-white font-bold text-base transition-all flex items-center gap-2 group backdrop-blur-sm">
-<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">play_circle</span>
-                                Our music
-                            </button>
-</div>
-<div class="flex items-center gap-4 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400">
-<div class="flex -space-x-3">
-<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-gray-200 bg-cover bg-center hover:scale-110 transition-transform duration-300" style='background-image: url("images/an_here.jpg");'></div>
-<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-gray-200 bg-cover bg-center hover:scale-110 transition-transform duration-300" style='background-image: url("images/linh_here.jpg");'></div>
-
-</div>
-<p>An&Linh here</p>
-</div>
-</div>
-<div class="flex-1 w-full relative group">
-<div class="absolute inset-0 bg-primary/20 rounded-xl rotate-6 scale-95 transition-transform group-hover:rotate-3 group-hover:scale-100 duration-500"></div>
-<div class="w-full aspect-[4/3] bg-cover bg-center rounded-xl shadow-2xl relative z-10 transition-transform group-hover:-translate-y-2 duration-500 animate-float-gentle" style='background-image: url("images/our_here.jpg");'>
-<div class="absolute -bottom-6 -left-6 bg-white dark:bg-surface-dark p-4 rounded-lg shadow-xl max-w-[200px] animate-pulse">
-<div class="flex items-center gap-3 mb-2">
-<span class="material-symbols-outlined text-yellow-500">❤️</span>
-</div>
-<p class="text-xs text-gray-500 dark:text-gray-400">"23/12/2025"</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="w-full py-24 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm relative opacity-0 transition-opacity duration-1000" id="quote-section">
-<div class="max-w-[960px] mx-auto px-6 text-center">
-<span class="material-symbols-outlined text-6xl text-primary/30 mb-6">format_quote</span>
-<h2 class="text-3xl md:text-5xl font-black leading-tight text-[#111718] dark:text-white mb-6">
-                        "Every encounter has its meaning, no matter the outcome."
-                    </h2>
-<div class="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
-<p class="text-lg font-medium text-gray-500 dark:text-gray-400">🐯❤️🐷</p>
-</div>
-</section>
-
-<section class="w-full px-6 md:px-20 lg:px-40 py-24 opacity-0 transition-opacity duration-1000" id="image-grid-section">
-    <div class="max-w-[1200px] mx-auto flex flex-col gap-12">
-        <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 md:gap-8 min-h-[500px]">
-
-            <div class="w-[45%] md:w-1/5 aspect-[3/4] rounded-2xl bg-cover bg-center shadow-xl hover:scale-110 transition-all duration-500 -rotate-6 -translate-y-12 border-4 border-white dark:border-surface-dark"
-                 style='background-image: url("images/together_1.jpg");'>
-            </div>
-
-            <div class="w-[50%] md:w-1/4 aspect-square rounded-2xl bg-cover bg-center shadow-2xl hover:scale-110 transition-all duration-500 rotate-3 translate-y-8 border-4 border-white dark:border-surface-dark"
-                 style='background-image: url("images/together_2.jpg");'>
-            </div>
-
-            <div class="w-[60%] md:w-1/3 aspect-[4/5] rounded-3xl bg-cover bg-center shadow-2xl hover:scale-110 transition-all duration-500 z-10 border-4 border-white dark:border-surface-dark animate-float-gentle"
-                 style='background-image: url("images/together_3.jpg");'>
-            </div>
-
-            <div class="w-[40%] md:w-1/6 aspect-square rounded-2xl bg-cover bg-center shadow-xl hover:scale-110 transition-all duration-500 rotate-12 -translate-y-20 border-4 border-white dark:border-surface-dark"
-                 style='background-image: url("images/together_4.jpg");'>
-            </div>
-        </div>
-
-        <div class="flex justify-center mt-8">
-            <button class="h-12 px-10 rounded-full bg-primary hover:bg-primary-dark text-white font-bold tracking-wide transition-all shadow-lg shadow-primary/20 hover:-translate-y-1">
-                See u soon...
-            </button>
-        </div>
-    </div>
-</section>
-
-<footer class="w-full bg-white/70 dark:bg-background-dark/80 backdrop-blur-sm py-20 px-6 md:px-20 lg:px-40 border-t border-gray-200/50 dark:border-gray-800/50">
-<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-12">
-<div class="flex flex-col gap-6 max-w-sm">
-<div class="flex items-center gap-3">
-<div class="size-8 bg-primary/20 dark:bg-primary/10 rounded-full flex items-center justify-center text-primary">
-<span class="material-symbols-outlined filled text-sm">auto_stories</span>
-</div>
-<h2 class="text-lg font-bold text-[#111718] dark:text-white">Our story</h2>
-</div>
-<p class="text-sm text-gray-500 dark:text-gray-400">
-                            "We are here to tell u about our story. Hopefully, this gives you a little boost of positivity"
-                        </p>
-<div class="flex gap-4">
-    <span class="text-2xl">🐯</span>
-    <span class="text-2xl">❤️</span>
-    <span class="text-2xl">🐷</span>
-</div>
-</div>
-
-<div class="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-800/50 text-center">
-<p class="text-xs text-gray-400">© 2025 Story Loving of us</p>
-</div>
-</footer>
-</main>
-</div>
-</body></html>
+    <script src="script.js"></script>
+</body>
+</html>

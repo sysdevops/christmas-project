@@ -1,62 +1,73 @@
-/**
- * PROTECTIVE SHIELD & STORY LOGIC
- * Created for Andy
- */
+(function() {
+    const message = "Please view our story with positivity and do not attack us. Thank you! ❤️";
+    const style = "color: #13c8ec; font-size: 20px; font-weight: bold; font-family: 'Plus Jakarta Sans', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); padding: 10px;";
 
-document.addEventListener("DOMContentLoaded", function() {
+    console.info("%c" + message, style);
 
-    // 1. SHIELD: Ngăn chặn các phím tắt Inspect Element
-    document.addEventListener('contextmenu', e => e.preventDefault()); // Chặn chuột phải
+    document.addEventListener('contextmenu', e => e.preventDefault());
 
     document.onkeydown = function(e) {
-        // Chặn F12
-        if (e.keyCode == 123) return false;
-        // Chặn Ctrl+Shift+I (Inspect)
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-        // Chặn Ctrl+Shift+C (View Element)
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
-        // Chặn Ctrl+Shift+J (Console)
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
-        // Chặn Ctrl+U (View Source)
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-    };
-
-    // 2. PHÁT HIỆN DEVTOOLS (Nếu người dùng cố tình mở console, sẽ xóa sạch log hoặc debugger)
-    setInterval(function() {
-        if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
-            console.clear();
-            console.log("%cSecurity Shield Active", "color:red; font-size:20px; font-weight:bold;");
+        if (
+            e.keyCode === 123 || // F12
+            (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
+            (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+        ) {
+            return false;
         }
-    }, 1000);
-
-    // 3. HIỆU ỨNG CUỘN (Intersection Observer)
-    const observerOptions = {
-        root: null,
-        threshold: 0.1
     };
 
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-slide-up');
-                entry.target.style.opacity = "1";
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Áp dụng cho các section
-    const trendingSection = document.querySelector('#trending-section');
-    if (trendingSection) revealObserver.observe(trendingSection);
-
-    // 4. MÃ HÓA PATH ẢNH TRÊN CLIENT (Mẹo nhỏ)
-    // Thay vì để link ảnh trực tiếp, bạn có thể load ảnh qua JS để ẩn path trong HTML gốc
-    const images = document.querySelectorAll('img[data-secure-src]');
-    images.forEach(img => {
-        const encryptedPath = img.getAttribute('data-secure-src');
-        // Ở đây bạn có thể dùng hàm giải mã đơn giản nếu muốn
-        img.src = encryptedPath;
+    const noop = () => {};
+    const methods = ['log', 'debug', 'warn', 'error', 'table', 'clear'];
+    methods.forEach(method => {
+        console[method] = noop;
     });
 
-    console.log("Welcome to Andy's protected story space.");
+    setInterval(function() {
+        (function() {
+            return false;
+        }['constructor']('debugger')['call']());
+    }, 50);
+})();
+
+
+function changeLanguage(lang) {
+    const label = document.getElementById('lang-label');
+    if (label) label.innerText = lang.toUpperCase();
+
+    const icon = document.getElementById('lang-icon');
+    if (icon) icon.innerText = (lang === 'vi') ? '🇻🇳' : '🇺🇸';
+
+    const elements = document.querySelectorAll('[data-en]');
+    elements.forEach(el => {
+        const translation = el.getAttribute(`data-${lang}`);
+        if (translation) {
+            if (el.tagName === 'TITLE') {
+                document.title = translation;
+            } else {
+                el.innerText = translation;
+            }
+        }
+    });
+
+    localStorage.setItem('preferredLang', lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    changeLanguage(savedLang);
+
+    // Kích hoạt animation khi cuộn
+    if (typeof IntersectionObserver !== "undefined") {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const sections = document.querySelectorAll('#quote-section, #image-grid-section');
+        sections.forEach(el => observer.observe(el));
+    }
 });
