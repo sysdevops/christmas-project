@@ -5,8 +5,8 @@
 <title>❤️ For Andy</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
@@ -57,50 +57,35 @@
         }
     </script>
 <script>
-    // Simple Intersection Observer script for scroll animations
     document.addEventListener("DOMContentLoaded", function() {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-slide-up');
                     entry.target.classList.remove('opacity-0');
-                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
-        const popObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-pop-in');
-                    entry.target.classList.remove('opacity-0');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        // Target specific sections based on request
-        const quoteSection = document.querySelector('#quote-section');
-        if (quoteSection) observer.observe(quoteSection);
-        const trendingSection = document.querySelector('#trending-section');
-        if (trendingSection) popObserver.observe(trendingSection);
-        // Also animate images in last section
-        const imageGrid = document.querySelector('#image-grid-section');
-        if (imageGrid) observer.observe(imageGrid);
+
+        const quote = document.querySelector('#quote-section');
+        if (quote) observer.observe(quote);
+        const grid = document.querySelector('#image-grid-section');
+        if (grid) observer.observe(grid);
     });
 </script>
-<style type="text/tailwindcss">.bg-sunshine-beach {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuCp6Z19BXaipvRGKXfuHI7S_wEMxlKj2x0vKLY-CscdjUiAb27LRsf7IgWiOgjDcGYV2ajJLreGl1SQTe4UzzHe34-M9jFvfm29146uLyqtxVXMi9xALk7qy6etDEYjE28p2SV9fWyQ3IZ94MOIjn47Jl_2lBDDZQr45BISS5Ql42tB-wxEdgZ-fN542u9f8VEp7vMBqCQV3EdQhMSPyN_eEDxZwtI6Rpoek9_2vC0SDBjvACILFX-Gb_OLRt-fgmUY41dZow8K8qvG);
+<style type="text/tailwindcss">
+/* ĐÃ CẬP NHẬT ĐƯỜNG DẪN BACKGROUND */
+.bg-sunshine-beach {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url("images/our_here.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed
     }
 .dark .bg-sunshine-beach {
-    background-image: linear-gradient(to bottom, rgba(26, 22, 20, 0.9), rgba(26, 22, 20, 0.95)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuBSH_HjMOe5NZ7zfmIf0G-N2-tJhjIRZaX16PJFSjxcQUp-t1WG5u5fREaSN5tnkG75etWx1ARh3HgRP5J78x1K11VkLX25MQ1X-G_IQw9SqZgq9NKmUYhZh7b-BgK3AwW1JXqKrZRRtgrvwVf76EwNszZbBmbiyv-0A2_YTNqIbXyLRvxB5GuV5_Mqw0oHeue9mUy3bF5AmD_eZxWtNg0vlpNSSInAdgBuls5HJ1qd3j-pFxH084TpZBD2Ipjx6j5rQKNkoWUxt0TY)
-    }</style>
+    background-image: linear-gradient(to bottom, rgba(26, 22, 20, 0.9), rgba(26, 22, 20, 0.95)), url("images/our_here.jpg")
+    }
+</style>
 </head>
 <body class="bg-sunshine-beach text-[#111718] dark:text-[#f0f4f4] font-display overflow-x-hidden transition-colors duration-300 min-h-screen">
 <div aria-hidden="true" class="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
@@ -129,17 +114,17 @@
 <nav class="hidden md:flex items-center gap-8">
 <a class="text-sm font-semibold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors" href="#">Story</a>
 <a class="text-sm font-semibold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors" href="#">Image</a>
-<a class="text-sm font-semibold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-semibold text-[#111718]/80 dark:text-white/80 hover:text-primary transition-colors" href="about_us.html">About Us</a>
 </nav>
 <div class="flex items-center gap-4">
-<a aria-label="Instagram" class="text-[#111718] dark:text-white hover:text-primary hover:scale-110 transition-all p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<a aria-label="Instagram" class="text-[#111718] dark:text-white hover:text-primary hover:scale-110 transition-all p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" href="https://www.instagram.com/">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
 <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
 </svg>
 </a>
-<a aria-label="Facebook" class="text-[#111718] dark:text-white hover:text-primary hover:scale-110 transition-all p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<a aria-label="Facebook" class="text-[#111718] dark:text-white hover:text-primary hover:scale-110 transition-all p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" href="https://www.facebook.com/">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
 </svg>
@@ -148,6 +133,7 @@
 </div>
 </div>
 </header>
+
 <main class="flex-grow flex flex-col items-center w-full">
 <section class="w-full px-6 md:px-20 lg:px-40 py-12 md:py-20 relative overflow-hidden">
 <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -176,8 +162,8 @@
 </div>
 <div class="flex items-center gap-4 mt-6 text-sm font-medium text-gray-500 dark:text-gray-400">
 <div class="flex -space-x-3">
-<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-gray-200 bg-cover bg-center hover:scale-110 transition-transform duration-300" data-alt="Portrait of a smiling young woman" style='background-image: url("images/an_here.jpg");'></div>
-<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-gray-200 bg-cover bg-center hover:scale-110 transition-transform duration-300" data-alt="Portrait of a focused man" style='background-image: url("images/linh_here.jpg");'></div>
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-gray-200 bg-cover bg-center hover:scale-110 transition-transform duration-300" style='background-image: url("images/an_here.jpg");'></div>
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-background-dark bg-gray-200 bg-cover bg-center hover:scale-110 transition-transform duration-300" style='background-image: url("images/linh_here.jpg");'></div>
 
 </div>
 <p>An&Linh here</p>
@@ -185,7 +171,7 @@
 </div>
 <div class="flex-1 w-full relative group">
 <div class="absolute inset-0 bg-primary/20 rounded-xl rotate-6 scale-95 transition-transform group-hover:rotate-3 group-hover:scale-100 duration-500"></div>
-<div class="w-full aspect-[4/3] bg-cover bg-center rounded-xl shadow-2xl relative z-10 transition-transform group-hover:-translate-y-2 duration-500 animate-float-gentle" data-alt="Open book with glowing particles floating upwards in a warm library" style='background-image: url("images/our_here.jpg");'>
+<div class="w-full aspect-[4/3] bg-cover bg-center rounded-xl shadow-2xl relative z-10 transition-transform group-hover:-translate-y-2 duration-500 animate-float-gentle" style='background-image: url("images/our_here.jpg");'>
 <div class="absolute -bottom-6 -left-6 bg-white dark:bg-surface-dark p-4 rounded-lg shadow-xl max-w-[200px] animate-pulse">
 <div class="flex items-center gap-3 mb-2">
 <span class="material-symbols-outlined text-yellow-500">❤️</span>
@@ -196,6 +182,7 @@
 </div>
 </div>
 </section>
+
 <section class="w-full py-24 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm relative opacity-0 transition-opacity duration-1000" id="quote-section">
 <div class="max-w-[960px] mx-auto px-6 text-center">
 <span class="material-symbols-outlined text-6xl text-primary/30 mb-6">format_quote</span>
@@ -206,87 +193,36 @@
 <p class="text-lg font-medium text-gray-500 dark:text-gray-400">🐯❤️🐷</p>
 </div>
 </section>
-<!--
-<section class="w-full px-6 md:px-20 lg:px-40 py-16 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm" id="image-grid-section">
-<div class="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
-<div class="flex flex-col gap-8 opacity-0 transition-opacity duration-700 delay-100">
-<div>
-<h2 class="text-4xl font-black leading-tight text-[#111718] dark:text-white mb-4">Why We Love Stories</h2>
-<p class="text-lg text-gray-600 dark:text-gray-300">Stories are more than just words on a page. They are the threads that weave our lives together, offering solace, excitement, and understanding.</p>
-</div>
-<div class="grid gap-6">
-<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-background-dark/50 transition-colors cursor-pointer group">
-<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-<span class="material-symbols-outlined">lightbulb</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-[#111718] dark:text-white">Inspiration</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Find the spark that ignites your passion and creativity.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-background-dark/50 transition-colors cursor-pointer group">
-<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-<span class="material-symbols-outlined">groups</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-[#111718] dark:text-white">Connection</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Connect with characters and fellow readers worldwide.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-white/50 dark:hover:bg-background-dark/50 transition-colors cursor-pointer group">
-<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-<span class="material-symbols-outlined">public</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-[#111718] dark:text-white">Imagination</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Travel to worlds beyond your wildest dreams without leaving home.</p>
-</div>
-</div>
-</div>
-<button class="w-fit mt-4 h-12 px-8 rounded-full bg-primary hover:bg-primary-dark text-[#111718] text-sm font-bold tracking-wide transition-all shadow-lg shadow-primary/20">
-                            Learn More About Us
-                        </button>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="space-y-4 mt-8">
-<div class="w-full aspect-[3/4] rounded-2xl bg-cover bg-center shadow-lg hover:scale-105 transition-transform duration-500 opacity-0 animate-slide-up" data-alt="Cozy reading nook with books and plants" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCR-QvcRylgpoy-yWfea_PgL-y7YTnY476VUsKmrzCapBZ6QTslAH1w3I3C0-MDgm9OmXE8zOI7vG_2aQMNZYvHWUIPj3KQ9uGVYw9rDZ5OHBRFN2qocX2sOwnal0bviNKfYiMI8eoGsHMGzyFavi9x2-ETnig9VnPBffaGAxOv6rNgyhiiTvLCXzCDLi2Z8Yt3XcEseSPlNrp61yOAAVD5rGNzohHp78EggjI9P46vdnCUd3ZFjoBpRgnevSMKXKdMkYIkkkffadAS"); animation-delay: 0.2s; animation-fill-mode: both;'></div>
-<div class="w-full aspect-square rounded-2xl bg-cover bg-center shadow-lg hover:scale-105 transition-transform duration-500 opacity-0 animate-slide-up" data-alt="Open book with rose petals" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7zGZfl5BfvF8JsGuXxffMPSqAfHAdMOIgwaDuKORHIvJmsdHcDSsvOZvhYZfNRwBI7AWTLq9sz4kDEj5Mwg3ovehYRp2yDixW97QhrxrV-WvorCyifzLPMGuxmf2XKkE5KCZRbbFot-ThXsqjMcaJoo6KAagvmrQEdy09KrRdxXoJGSImtAxX7G5lsZ17mi0x1eQozFyQ-1Dp1yLe-7ccSv3nMrXGheNEYFZnFytsJatg5ODHfVERi1ta5PoFaAT6_I9REvSZ4xpo"); animation-delay: 0.4s; animation-fill-mode: both;'></div>
-</div>
-<div class="space-y-4">
-<div class="w-full aspect-square rounded-2xl bg-cover bg-center shadow-lg hover:scale-105 transition-transform duration-500 opacity-0 animate-slide-up" data-alt="Person reading a book in a cafe window" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkQozUltdhzL1mSLT9MchuNAObNSEN01FqpweM4sfohNxAnZEOS3QMTukWTsKMmig5gAsmPFVJq1k2v0tZ0-VDVp4Bu-WuyFO8vw_j9rVFDglLJWIIEhCMDulFaCO5cXwsgcsIgl2xIVViGMT_QHadluqoNoy6WRXIo472Ij4FVkq736uCo3NaJfxbQ5OOIpdu3VHwCzVw6quu8ttBR3N4qBvyTrUe5V23CV707Ncn-3CIOqlOilTWFWFUDbHrKBbhbESCghs46w_Y"); animation-delay: 0.3s; animation-fill-mode: both;'></div>
-<div class="w-full aspect-[3/4] rounded-2xl bg-cover bg-center shadow-lg hover:scale-105 transition-transform duration-500 opacity-0 animate-slide-up" data-alt="Library interior with tall bookshelves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6aH9zCzW7yuuvL2mnTDjkg4SoKJ3IlGgpUIwco4lTEnaqeNf8b0UI1jp8vfTXsmsy9Qi3C8s6KOYlIzhzjz4fOzFtJ0cIspgYtt4iwJkZhlGH0xehMhgsh6ReXJPri9eRvO8tlRYa6qKOxHPUDBRwkm0TXR7Jm4hhankWX3Uoj3rLYyW9-iQQKFMNYI0_pLMMaCulNkXhb2qaKet1SqGyRGxJKgoJJKcxck6NZ4YlvZpRobaovzP3t3zaxePD8ja79aZ0axv9z0vO"); animation-delay: 0.5s; animation-fill-mode: both;'></div>
-</div>
-</div>
-</div>
-</section> -->
-<section class="w-full px-6 md:px-20 lg:px-40 py-24 bg-white/60 dark:bg-surface-dark/60 backdrop-blur-sm" id="image-grid-section">
-    <div class="max-w-[1200px] mx-auto flex flex-col gap-16">
-        <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 md:gap-8 min-h-[400px]">
 
-            <div class="w-[45%] md:w-1/4 aspect-[3/4] rounded-2xl bg-cover bg-center shadow-2xl hover:scale-105 transition-all duration-500 -translate-y-8 animate-float-gentle"
+<section class="w-full px-6 md:px-20 lg:px-40 py-24 opacity-0 transition-opacity duration-1000" id="image-grid-section">
+    <div class="max-w-[1200px] mx-auto flex flex-col gap-12">
+        <div class="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 md:gap-8 min-h-[500px]">
+
+            <div class="w-[45%] md:w-1/5 aspect-[3/4] rounded-2xl bg-cover bg-center shadow-xl hover:scale-110 transition-all duration-500 -rotate-6 -translate-y-12 border-4 border-white dark:border-surface-dark"
                  style='background-image: url("images/together_1.jpg");'>
             </div>
 
-            <div class="w-[50%] md:w-1/3 aspect-square rounded-2xl bg-cover bg-center shadow-2xl hover:scale-105 transition-all duration-500 translate-y-4"
-                 style='background-image: url("images/together_2.jpg"); animation-delay: 0.5s;'>
+            <div class="w-[50%] md:w-1/4 aspect-square rounded-2xl bg-cover bg-center shadow-2xl hover:scale-110 transition-all duration-500 rotate-3 translate-y-8 border-4 border-white dark:border-surface-dark"
+                 style='background-image: url("images/together_2.jpg");'>
             </div>
 
-            <div class="w-[45%] md:w-1/5 aspect-[3/4] rounded-2xl bg-cover bg-center shadow-2xl hover:scale-105 transition-all duration-500 -translate-y-12"
-                 style='background-image: url("images/together_3.jpg"); animation-delay: 1s;'>
+            <div class="w-[60%] md:w-1/3 aspect-[4/5] rounded-3xl bg-cover bg-center shadow-2xl hover:scale-110 transition-all duration-500 z-10 border-4 border-white dark:border-surface-dark animate-float-gentle"
+                 style='background-image: url("images/together_3.jpg");'>
             </div>
 
-            <div class="w-[50%] md:w-1/6 aspect-square rounded-2xl bg-cover bg-center shadow-2xl hover:scale-105 transition-all duration-500 translate-y-16"
-                 style='background-image: url("images/together_4.jpg"); animation-delay: 1.5s;'>
+            <div class="w-[40%] md:w-1/6 aspect-square rounded-2xl bg-cover bg-center shadow-xl hover:scale-110 transition-all duration-500 rotate-12 -translate-y-20 border-4 border-white dark:border-surface-dark"
+                 style='background-image: url("images/together_4.jpg");'>
             </div>
         </div>
 
-        <div class="flex justify-center mt-12">
-            <button class="h-12 px-10 rounded-full bg-primary hover:bg-primary-dark text-[#111718] text-sm font-bold tracking-wide transition-all shadow-lg shadow-primary/20 hover:-translate-y-1">
+        <div class="flex justify-center mt-8">
+            <button class="h-12 px-10 rounded-full bg-primary hover:bg-primary-dark text-white font-bold tracking-wide transition-all shadow-lg shadow-primary/20 hover:-translate-y-1">
                 See u soon...
             </button>
         </div>
     </div>
 </section>
+
 <footer class="w-full bg-white/70 dark:bg-background-dark/80 backdrop-blur-sm py-20 px-6 md:px-20 lg:px-40 border-t border-gray-200/50 dark:border-gray-800/50">
 <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-12">
 <div class="flex flex-col gap-6 max-w-sm">
@@ -300,9 +236,9 @@
                             "We are here to tell u about our story. Hopefully, this gives you a little boost of positivity"
                         </p>
 <div class="flex gap-4">
-    <a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">🐯</span></a>
-<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">❤️</span></a>
-<a class="text-gray-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">🐷</span></a>
+    <span class="text-2xl">🐯</span>
+    <span class="text-2xl">❤️</span>
+    <span class="text-2xl">🐷</span>
 </div>
 </div>
 

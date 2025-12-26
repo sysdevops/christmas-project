@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#13c8ec",
+                "love": "#fb7185",
+                "love-bg": "#fff1f2",
+                "love-dark": "#881337",
+                "background-light": "#f6f8f8",
+                "background-dark": "#101f22",
+                "card-light": "#ffffff",
+                "card-dark": "#1a282b",
+                "text-main": "#111718",
+                "text-sub": "#618389",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"],
+                "body": ["Noto Sans", "sans-serif"],
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+              animation: {
+                'jump-down': 'jumpDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+              },
+              keyframes: {
+                jumpDown: {
+                  '0%': { opacity: '0', transform: 'translateY(-100px) rotate(-2deg)' },
+                  '100%': { opacity: '1', transform: 'translateY(0) rotate(0deg)' },
+                }
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .folded-card {
+            clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden antialiased">
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-[#101f22]/90 backdrop-blur-md border-b border-[#f0f4f4] dark:border-gray-800">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1200px] mx-auto">
+<div class="flex items-center gap-4 text-[#111718] dark:text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Our story</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Stories</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Image</a>
+</div>
+</div>
+<div class="md:hidden">
+<button class="text-[#111718] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex flex-col items-center w-full pb-20">
+<section class="w-full px-4 pt-16 pb-12 md:py-24 flex justify-center">
+<div class="max-w-[960px] w-full text-center flex flex-col gap-6 items-center">
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-text-main dark:text-white">
+                And here we are
+            </h1>
+<p class="text-lg md:text-xl text-text-sub dark:text-gray-400 max-w-2xl font-light">
+                "A little bit of us."
+            </p>
+<div class="h-1 w-24 bg-primary rounded-full mt-4"></div>
+</div>
+</section>
+<div class="w-full max-w-[1080px] px-4 md:px-8 flex flex-col gap-16 md:gap-24">
+<article class="group relative flex flex-col lg:flex-row min-h-[500px] gap-8 items-center">
+<div class="flex-1 w-full order-2 lg:order-1 animate-jump-down" style="animation-delay: 0.1s;">
+<div class="relative folded-card bg-love-bg dark:bg-card-dark p-8 md:p-12 lg:p-12 shadow-[0_10px_40px_-10px_rgba(251,113,133,0.3)] dark:shadow-none min-h-[400px] flex flex-col justify-center gap-8 border-l-4 border-love">
+<div class="absolute top-0 right-0 w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-bl-xl shadow-md border-b border-l border-love/20"></div>
+<div class="absolute top-4 right-12 text-love rotate-12 opacity-80">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="bg-love/20 text-love-dark dark:text-love px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"></span>
+<div class="h-px bg-love/30 dark:bg-gray-700 flex-1"></div>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white font-display">Gia An</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-white/60 dark:bg-[#152023] border border-love/10">
+<span class="material-symbols-outlined text-love text-2xl">auto_awesome</span>
+<div>
+<h3 class="font-bold text-sm text-text-main dark:text-white">8/12</h3>
+<p class="text-xs text-text-sub">Sagittarius</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-white/60 dark:bg-[#152023] border border-love/10">
+<span class="material-symbols-outlined text-love text-2xl">local_cafe</span>
+<div>
+<h3 class="font-bold text-sm text-text-main dark:text-white"></h3>
+<p class="text-xs text-text-sub"></p>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-white/60 dark:bg-[#152023] border border-love/10">
+<span class="material-symbols-outlined text-love text-2xl">edit_note</span>
+<div>
+<h3 class="font-bold text-sm text-text-main dark:text-white">HR girlie</h3>
+<p class="text-xs text-text-sub"></p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<button class="flex items-center justify-center h-12 px-6 bg-love text-white text-sm font-bold rounded-full hover:brightness-110 shadow-lg shadow-love/30 transition-all">
+                            🐷
+                        </button>
+<div class="flex gap-2">
+<a class="size-10 flex items-center justify-center rounded-full border border-love/20 hover:bg-love/10 transition-colors text-love" href="#">
+<span class="text-lg font-bold">In</span>
+</a>
+<a class="size-10 flex items-center justify-center rounded-full border border-love/20 hover:bg-love/10 transition-colors text-love" href="#">
+<span class="text-lg font-bold">X</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-full lg:w-[45%] h-64 lg:h-[450px] order-1 lg:order-2 rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<div class="absolute inset-0 bg-gray-200">
+<img alt="Portrait of Jane Doe looking inspired in a natural setting" class="w-full h-full object-cover" src="images/an_here.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+</article>
+<article class="group relative flex flex-col lg:flex-row min-h-[500px] gap-8 items-center">
+<div class="flex-1 w-full order-2 lg:order-1 animate-jump-down" style="animation-delay: 0.3s;">
+<div class="relative folded-card bg-love-bg dark:bg-card-dark p-8 md:p-12 lg:p-12 shadow-[0_10px_40px_-10px_rgba(251,113,133,0.3)] dark:shadow-none min-h-[400px] flex flex-col justify-center gap-8 border-l-4 border-love">
+<div class="absolute top-0 right-0 w-[40px] h-[40px] bg-white dark:bg-gray-800 rounded-bl-xl shadow-md border-b border-l border-love/20"></div>
+<div class="absolute top-4 right-12 text-love rotate-12 opacity-80">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="bg-love/20 text-love-dark dark:text-love px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"></span>
+<div class="h-px bg-love/30 dark:bg-gray-700 flex-1"></div>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white font-display">Nhut Linh</h2>
+<p class="text-text-sub dark:text-gray-300 leading-relaxed text-base md:text-lg">
+                        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-white/60 dark:bg-[#152023] border border-love/10">
+<span class="material-symbols-outlined text-love text-2xl">bolt</span>
+<div>
+<h3 class="font-bold text-sm text-text-main dark:text-white">12/11</h3>
+<p class="text-xs text-text-sub">Scorpio</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-white/60 dark:bg-[#152023] border border-love/10">
+<span class="material-symbols-outlined text-love text-2xl">coffee</span>
+<div>
+<h3 class="font-bold text-sm text-text-main dark:text-white"></h3>
+<p class="text-xs text-text-sub"></p>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-white/60 dark:bg-[#152023] border border-love/10">
+<span class="material-symbols-outlined text-love text-2xl">architecture</span>
+<div>
+<h3 class="font-bold text-sm text-text-main dark:text-white">...and her Engineer</h3>
+<p class="text-xs text-text-sub"></p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<button class="flex items-center justify-center h-12 px-6 bg-love text-white text-sm font-bold rounded-full hover:brightness-110 shadow-lg shadow-love/30 transition-all">
+                            🐯
+                        </button>
+<div class="flex gap-2">
+<a class="size-10 flex items-center justify-center rounded-full border border-love/20 hover:bg-love/10 transition-colors text-love" href="#">
+<span class="text-lg font-bold">In</span>
+</a>
+<a class="size-10 flex items-center justify-center rounded-full border border-love/20 hover:bg-love/10 transition-colors text-love" href="#">
+<span class="text-lg font-bold">X</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-full lg:w-[45%] h-64 lg:h-[450px] order-1 lg:order-2 rounded-2xl overflow-hidden shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+<div class="absolute inset-0 bg-gray-200">
+<img alt="Portrait of John Smith smiling in a modern office environment" class="w-full h-full object-cover" src="images/linh_here.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+</article>
+</div>
+<section class="mt-24 w-full px-4 flex justify-center">
+
+</section>
+</main>
+<footer class="w-full bg-white dark:bg-[#101f22] border-t border-[#f0f4f4] dark:border-gray-800 py-10 px-4">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+<span class="font-bold text-text-main dark:text-white">Our Story</span>
+</div>
+
+<p class="text-sm text-text-sub">© 2025 All about us.</p>
+</div>
+</footer>
+
+</body></html>
